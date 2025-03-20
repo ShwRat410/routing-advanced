@@ -1,5 +1,4 @@
-import { useNavigate } from 'react-router-dom';
-
+import { Form, useNavigate } from 'react-router-dom';
 import classes from './EventForm.module.css';
 
 function EventForm({ method, event }) {
@@ -9,10 +8,10 @@ function EventForm({ method, event }) {
   }
 
   return (
-    <form className={classes.form}>
+    <Form method='post' className={classes.form}>
       <p>
         <label htmlFor="title">Title</label>
-        <input id="title" type="text" name="title" required defaultValue={event?event.title:''}/>
+        <input id="title" type="text" name="title" required defaultValue={event?.title}/>
       </p>
       <p>
         <label htmlFor="image">Image</label>
@@ -32,7 +31,7 @@ function EventForm({ method, event }) {
         </button>
         <button>Save</button>
       </div>
-    </form>
+    </Form>
   );
 }
 

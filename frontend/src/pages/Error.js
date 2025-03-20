@@ -11,6 +11,7 @@ export default function ErrorPage() {
   console.log(error.status)
 
   if(error.status===500){
+    console.log("Inside 500 status code")
     message = JSON.parse(error.data).message
   }
 
